@@ -4,19 +4,24 @@
   "description": "JavaScript development environment Pluralsight course by Cory House",
   "scripts": {
     "prestart": "babel-node buildScripts/startMessage.js",
-    "start": "npm-run-all --parallel security-check open:src lint:watch test:watch",
+    "start": "npm-run-all --parallel security-check open:src lint:watch test:watch start-mockapi",
     "open:src": "babel-node buildScripts/srcServer.js",
     "security-check": "nsp check",
     "localtunnel": "lt --port 8080",
     "share": "npm-run-all open:src localtunnel",
-	"lint": "esw webpack.config.* src buildScripts --color",
-	"lint:watch":"npm run lint -- --watch",
-	"test:watch":"npm run test -- --watch",
-	"test":"mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\""
+    "lint": "esw webpack.config.* src buildScripts --color",
+    "lint:watch": "npm run lint -- --watch",
+    "test:watch": "npm run test -- --watch",
+    "test": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\"",
+    "generate-mock-data":"babel-node buildScripts/generateMockData",
+    "prestart-mockapi":"npm run generate-mock-data",
+    "start-mockapi":"json-server --watch src/api/db.json --port 8081"
   },
   "author": "Cory House",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "whatwg-fetch": "^2.0.3"
+  },
   "devDependencies": {
     "babel-cli": "6.16.0",
     "babel-core": "6.17.0",
