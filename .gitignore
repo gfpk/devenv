@@ -60,3 +60,6 @@ typings/
 # mock db removed
 src/api/db.json
 
+
+# dist folder for production builds
+dist
