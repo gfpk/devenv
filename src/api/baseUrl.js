@@ -1,5 +1,5 @@
 export default function(){
-    return getQueryStringParameterByName('useMockApi') ? 'http://localhost:8081/':'/';
+    return getQueryStringParameterByName('useMockApi') ? 'http://localhost:8081/':'https://peaceful-woodland-91492.herokuapp.com/';
 }
 
 function getQueryStringParameterByName(name, url) {
