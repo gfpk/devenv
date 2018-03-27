@@ -16,14 +16,15 @@ app.get('/', function(req, res){
 	res.sendFile(path.join(__dirname,'../dist/index.html'))
 })
 
-app.get('/users', function(req, res){
+// now its done by separate app on heroku
+//app.get('/users', function(req, res){
 	//real db placeholder (not mockup)
-	res.json([
-		{"id":1, "firstName":"Bob", "lastName":"Smith", "email":"bob@me.com"},
-		{"id":2, "firstName":"Tammy", "lastName":"Norton", "email":"tammy@me.com"},
-		{"id":3, "firstName":"Tina", "lastName":"Lee", "email":"lee.tina@me.com"}
-	])
-})
+	//res.json([
+		//{"id":1, "firstName":"Bob", "lastName":"Smith", "email":"bob@me.com"},
+		//{"id":2, "firstName":"Tammy", "lastName":"Norton", "email":"tammy@me.com"},
+		//{"id":3, "firstName":"Tina", "lastName":"Lee", "email":"lee.tina@me.com"}
+	//])
+//})
 
 
 app.listen(port, function(err){
